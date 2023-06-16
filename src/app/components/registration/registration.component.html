@@ -5,7 +5,7 @@
     <div class="line"></div>
     <p>We're glad you're here. Please fill out the form below to apply and join our community.</p>
   </div>
-  <div style="border: 4px solid black; border-radius: 4px; padding: 4px;">
+  <div class="card-container">
     <div class="card">
       <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" >
         <div class="form-group">
@@ -19,7 +19,9 @@
           <label for="code">Code:</label>
           <input type="text" id="code" formControlName="code">
         </div>
-        <button [disabled]="!registrationForm.valid" class="submit-button" type="submit">Submit</button>
+        <div class="btn-container">
+          <button [disabled]="!registrationForm.valid" class="submit-button" type="submit">Submit</button>
+        </div>
       </form>
     </div>
   </div>

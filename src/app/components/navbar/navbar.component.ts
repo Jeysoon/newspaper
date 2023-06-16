@@ -12,9 +12,6 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.date = new Date();
-//     const date = new Date();
-// const options = { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' };
-// const formattedDate = date.toLocaleString('en-US', options);
   }
   onNavigate(){
 
