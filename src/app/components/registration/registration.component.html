@@ -10,14 +10,14 @@
       <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" >
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" id="email" formControlName="email">
+          <input class="user-input" type="email" id="email" formControlName="email">
           <span
           *ngIf="registrationForm.get('email')?.errors?.['email']" style="color: red; margin: 8px;">Please provide a correct email format</span>
           <span *ngIf="!registrationForm.get('email')?.valid && registrationForm.get('email')?.touched && !registrationForm.get('email')?.errors?.['email']" style="color: red; margin: 8px">Email is required, please provide one</span>
         </div>
         <div class="form-group">
           <label for="code">Code:</label>
-          <input type="text" id="code" formControlName="code">
+          <input class="user-input" type="text" id="code" formControlName="code">
         </div>
         <div class="btn-container">
           <button [disabled]="!registrationForm.valid" class="submit-button" type="submit">Submit</button>
