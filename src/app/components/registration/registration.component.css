@@ -35,7 +35,7 @@
 
 .invitation {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
 }
 
 .invitation h2 {
@@ -88,9 +88,13 @@
   .btn-container {
     display: flex;
     justify-content: center;
-    margin-top: 13px;
+    margin-top: 24px;
+  }
+  .submit-button {
+    width: 200px;
+    font-size: 1.5rem;
   }
 }
-.user-input{
+.user-input {
   font-size: 1.5rem;
 }
