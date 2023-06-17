@@ -31,6 +31,8 @@
   padding: 10px 15px 10px 15px;
   line-height: 20px;
   border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  color: black;
 }
 
 .invitation {
@@ -93,7 +95,6 @@
   .submit-button {
     width: 200px;
     font-size: 1.5rem;
-    /* color: black; */
   }
 }
 .user-input {
@@ -106,6 +107,7 @@ button.ng-invalid {
 .submit-invalid{
   cursor: not-allowed;
   pointer-events: none;
+  color: #888;
 }
 
 input{
