@@ -20,7 +20,7 @@
           <input class="user-input" type="text" id="code" formControlName="code">
         </div>
         <div class="btn-container">
-          <button [disabled]="!registrationForm.valid" class="submit-button" type="submit">Submit</button>
+          <button  [disabled]="!registrationForm.valid" class="submit-button" [ngClass]="{'submit-invalid': !registrationForm.valid}" type="submit">Submit</button>
         </div>
       </form>
     </div>

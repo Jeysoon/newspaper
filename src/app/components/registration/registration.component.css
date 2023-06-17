@@ -93,9 +93,21 @@
   .submit-button {
     width: 200px;
     font-size: 1.5rem;
-    color: black !important;
+    /* color: black; */
   }
 }
 .user-input {
   font-size: 1.5rem;
+}
+
+button.ng-invalid {
+  background-color: red;
+}
+.submit-invalid{
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+input{
+  outline: none;
 }
