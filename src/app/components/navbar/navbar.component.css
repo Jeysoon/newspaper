@@ -19,7 +19,6 @@ nav {
 }
 .date{
   text-align: center;
-  font-size: 24px;
 }
 .logo img {
   height: 60px;
@@ -31,7 +30,9 @@ nav {
   align-items: center;
   margin-left: auto; /* Push the links to the right */
   justify-content: flex-end;
-  margin-right: 25px;
+  /* margin-right: 25px; */
+  margin: 0 3%;
+  justify-content: space-between;
 }
 
 .links a {

@@ -7,7 +7,6 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
 import { AboutComponent } from './components/about/about.component';
-import { FaqsComponent } from './components/faqs/faqs.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     PersonalInformationComponent,
     AboutComponent,
-    FaqsComponent
   ],
   imports: [
     BrowserModule,

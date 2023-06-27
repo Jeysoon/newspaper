@@ -38,6 +38,10 @@
 .invitation {
   text-align: center;
   margin-bottom: 24px;
+  /*  */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .invitation h2 {
@@ -68,8 +72,10 @@
 .line {
   height: 1px;
   background-color: #333;
-  width: calc(100% - 20px);
-  margin: 5px auto;
+  /* width: calc(100% - 20px); */
+  width: 100%;
+  /* margin: 5px auto; */
+  margin: 32px 0;
 }
 .card-container {
   border: 4px solid black;
@@ -104,12 +110,18 @@
 button.ng-invalid {
   background-color: red;
 }
-.submit-invalid{
+.submit-invalid {
   cursor: not-allowed;
   pointer-events: none;
   color: #888;
 }
 
-input{
+input {
   outline: none;
+}
+.glad{
+  width: 90%;
+}
+.summer{
+  font-size: 24px !important;
 }

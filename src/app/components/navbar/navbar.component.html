@@ -1,13 +1,11 @@
 <nav>
   <div class="logo" style="display: flex;">
-    <img routerLink="/" src="../../../assets/newspaper.png" alt="Company Logo" >
     <span class="title" routerLink="/">OLD SCHOOL DATES</span>
   </div>
-  <div class="date">{{ date | date: 'fullDate' }}</div>
   <div class="line"></div>
   <div class="links">
+    <div class="date">{{ date | date: 'fullDate' }}</div>
     <a class="cta-button" routerLink="/about" routerLinkActive="active">About us</a>
-    <a class="cta-button" routerLink="/faqs" routerLinkActive="active">FAQ's</a>
   </div>
   <div class="line"></div>
 </nav>
