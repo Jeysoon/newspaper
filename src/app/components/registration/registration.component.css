@@ -152,12 +152,12 @@ input {
   flex-direction: column;
 }
 .vip {
-  font-size: 3rem;
+  font-size: 44px;
   background-color: transparent;
   color: #f7eb01;
   margin-right: 8px;
   text-align: center;
-  top: 5%;
+  top: 15%;
   position: relative;
   line-height: 3rem;
   /* position: absolute;
