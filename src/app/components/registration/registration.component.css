@@ -140,6 +140,7 @@ input {
   border-bottom-right-radius: 32px;
   border-bottom-left-radius: 32px;
   align-items: center;
+  overflow: hidden;
 }
 @media (min-width: 700px) {
   .content{

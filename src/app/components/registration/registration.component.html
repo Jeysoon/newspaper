@@ -42,12 +42,12 @@
       <div class="form-group">
         <label for="firstname">Firstname:</label>
         <input type="text" id="firstname" formControlName="firstname" class="user-input">
-        <span *ngIf="!registrationForm.get('firstname')?.valid && registrationForm.get('firstname')?.touched && !registrationForm.get('firstname')?.errors?.['email']" style="color: red; margin: 8px">Email is required, please provide one</span>
+        <span *ngIf="!registrationForm.get('firstname')?.valid && registrationForm.get('firstname')?.touched" style="color: red; margin: 8px">First name is required, please provide one</span>
       </div>
       <div class="form-group">
         <label for="lastname">Lastname:</label>
         <input type="text" id="lastname" formControlName="lastname" class="user-input">
-        <span *ngIf="!registrationForm.get('email')?.valid && registrationForm.get('email')?.touched && !registrationForm.get('email')?.errors?.['email']" style="color: red; margin: 8px">Email is required, please provide one</span>
+        <span *ngIf="!registrationForm.get('lastname')?.valid && registrationForm.get('lastname')?.touched" style="color: red; margin: 8px">Last name is required, please provide one</span>
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
