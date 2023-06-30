@@ -6,3 +6,6 @@
   font-family: 'Times New Roman', serif;
   background-color: #f1f1f1;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

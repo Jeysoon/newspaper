@@ -1,29 +1,90 @@
 
-<div class="container">
-  <div class="invitation">
+<!-- <div class="container"> -->
+  <!-- <div class="invitation">
     <h2 style="font-size: 64px;">GET VIP ACCESS</h2>
     <p class="summer">Sign Up Now for Priority Entry to the Hottest  FREE Summer Singles Event 30+</p>
     <div class="line"></div>
     <p class="glad">We're glad you're here. Please fill out the form below to apply and join our community.</p>
+  </div> -->
+  <!-- <div class="card-container">
+    <div class="card"> -->
+
+<!-- <div class="content">
+  <h2 class="vip">GET VIP ACCESS</h2>
+  <p class="recommendation">Sign Up Now for Priority Entry to the Hottest  FREE Summer Singles Event 30+</p>
+  <div class="container">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" >
+      <div >
+        <label for="email">Email:</label>
+        <input  type="email" id="email" formControlName="email">
+        <span
+        *ngIf="registrationForm.get('email')?.errors?.['email']" style="color: red; margin: 8px;">Please provide a correct email format</span>
+        <span *ngIf="!registrationForm.get('email')?.valid && registrationForm.get('email')?.touched && !registrationForm.get('email')?.errors?.['email']" style="color: red; margin: 8px">Email is required, please provide one</span>
+      </div>
+      <div >
+        <label for="code">Code:</label>
+        <input class="user-input" type="text" id="code" formControlName="code">
+      </div>
+      <div>
+        <button  [disabled]="!registrationForm.valid" class="submit-button" [ngClass]="{'submit-invalid': !registrationForm.valid}" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div> -->
+
+<div class="content">
+  <div class="news-container">
+    <h2 class="vip">GET VIP ACCESS</h2>
+    <p class="recommendation">Sign Up Now for Priority Entry to the Hottest FREE Summer Singles Event 30+</p>
   </div>
   <div class="card-container">
-    <div class="card">
-      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" >
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input class="user-input" type="email" id="email" formControlName="email">
-          <span
-          *ngIf="registrationForm.get('email')?.errors?.['email']" style="color: red; margin: 8px;">Please provide a correct email format</span>
-          <span *ngIf="!registrationForm.get('email')?.valid && registrationForm.get('email')?.touched && !registrationForm.get('email')?.errors?.['email']" style="color: red; margin: 8px">Email is required, please provide one</span>
-        </div>
-        <div class="form-group">
-          <label for="code">Code:</label>
-          <input class="user-input" type="text" id="code" formControlName="code">
-        </div>
-        <div class="btn-container">
-          <button  [disabled]="!registrationForm.valid" class="submit-button" [ngClass]="{'submit-invalid': !registrationForm.valid}" type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+    <form class="container" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="firstname">Firstname:</label>
+        <input type="text" id="firstname" formControlName="firstname" class="user-input">
+        <span *ngIf="!registrationForm.get('firstname')?.valid && registrationForm.get('firstname')?.touched && !registrationForm.get('firstname')?.errors?.['email']" style="color: red; margin: 8px">Email is required, please provide one</span>
+      </div>
+      <div class="form-group">
+        <label for="lastname">Lastname:</label>
+        <input type="text" id="lastname" formControlName="lastname" class="user-input">
+        <span *ngIf="!registrationForm.get('email')?.valid && registrationForm.get('email')?.touched && !registrationForm.get('email')?.errors?.['email']" style="color: red; margin: 8px">Email is required, please provide one</span>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" class="user-input">
+        <span *ngIf="registrationForm.get('email')?.errors?.['email']" style="color: red; margin: 8px;">Please provide a correct email format</span>
+        <span *ngIf="!registrationForm.get('email')?.valid && registrationForm.get('email')?.touched && !registrationForm.get('email')?.errors?.['email']" style="color: red; margin: 8px">Email is required, please provide one</span>
+      </div>
+      <div class="form-group">
+        <label for="code">Code:</label>
+        <input type="text" id="code" formControlName="code" class="user-input">
+      </div>
+      <button [disabled]="!registrationForm.valid" class="pure-material-button-contained" style="border-radius: 18px; color: #522b79" [ngClass]="{'submit-invalid': !registrationForm.valid}">Submit</button>
+        <!-- <button [disabled]="!registrationForm.valid"  class="" [ngClass]="{'submit-invalid': !registrationForm.valid}" type="submit">Submit</button> -->
+
+    </form>
   </div>
 </div>
+    <!-- </div> -->
+  <!-- </div>
+</div> -->
+
+
+
+
+<!-- <div class="container">
+
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" >
+    <div>
+      <input type="email" id="email" formControlName="email" placeholder="Email">
+      <span *ngIf="registrationForm.get('email')?.errors?.['email']" style="color: red; margin: 8px;">Please provide a correct email format</span>
+      <span *ngIf="!registrationForm.get('email')?.valid && registrationForm.get('email')?.touched && !registrationForm.get('email')?.errors?.['email']" style="color: red; margin: 8px">Email is required, please provide one</span>
+    </div>
+    <div>
+      <input class="user-input" type="text" id="code" formControlName="code" placeholder="Code">
+    </div>
+    <div>
+      <button [disabled]="!registrationForm.valid" class="submit-button" [ngClass]="{'submit-invalid': !registrationForm.valid}" type="submit">Submit</button>
+    </div>
+  </form>
+</div> -->
