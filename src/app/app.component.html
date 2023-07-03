@@ -3,9 +3,12 @@
   <router-outlet></router-outlet>
 </div> -->
 <div class="container">
-  <div class="background-image">
+  <div class="background-image" [ngClass]="{'black-white': currentRoute === '/blackwhite'}">
     <!-- <div class="content"> -->
       <router-outlet></router-outlet>
     <!-- </div> -->
     </div>
 </div>
+<button class="navigation" >
+  <mat-icon (click)="navigateTo()">compare_arrows</mat-icon>
+</button>

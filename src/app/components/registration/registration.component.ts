@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-registration',
@@ -7,9 +9,11 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./registration.component.css'],
 })
 export class RegistrationComponent implements OnInit {
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router, private appService: AppService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+   this.appService.currentRoute.next(this.router.url)
+  }
 
   registrationForm = this.fb.group({
     firstname: ['', {validators: [Validators.required]}],

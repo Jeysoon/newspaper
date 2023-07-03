@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-black-white',
@@ -8,9 +10,12 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class BlackWhiteComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private appService: AppService, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  console.log('setting route in black and white to:', this.router.url);
+  this.appService.currentRoute.next(this.router.url);
+  }
 
   registrationForm = this.fb.group({
     firstname: ['', {validators: [Validators.required]}],

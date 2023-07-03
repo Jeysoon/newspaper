@@ -1,11 +1,21 @@
-.container{
+.container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .background-image {
-  background-image: url('../assets/large.jpg');
+  background-image: url("../assets/large.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.black-white {
+  background-image: url("../assets/large.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -19,27 +29,20 @@
 .content {
   width: 80%;
   height: 56%;
-  background: linear-gradient(135deg,  #522B79, #522B79, #2C2265);
+  background: linear-gradient(135deg, #522b79, #522b79, #2c2265);
   position: absolute; /* Add this line to position the div */
   top: 50%; /* Position from the top */
   left: 50%; /* Position from the left */
   transform: translate(-50%, -50%); /* Center the div */
   border-radius: 4px;
   border-top-right-radius: 4rem;
-  /* box-shadow: -10px 0 20px #e913e0; */
   box-shadow: -2px 0 10px 10px #e913e0;
 }
-/* /// */
-/* div {
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
-  background: #000;
-  border-radius: 50%;
-  position: relative;
-} */
-
-
-
-
-
+.navigation {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  width: 20%;
+  height: 5%;
+  border-radius: 8px
+}
