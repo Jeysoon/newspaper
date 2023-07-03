@@ -10,6 +10,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './components/modules/material/material.module';
+import { BlackWhiteComponent } from './components/black-white/black-white.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { MaterialModule } from './components/modules/material/material.module';
     NavbarComponent,
     PersonalInformationComponent,
     AboutComponent,
+    BlackWhiteComponent
   ],
   imports: [
     BrowserModule,
