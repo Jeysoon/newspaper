@@ -9,8 +9,11 @@ import { PersonalInformationComponent } from './components/personal-information/
 import { AboutComponent } from './components/about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './components/modules/material/material.module';
+import { MaterialModule } from './modules/material/material.module';
 import { BlackWhiteComponent } from './components/black-white/black-white.component';
+import { OsdSplashComponent } from './components/splash/osd-splash.component';
+import { OsdEntryFormComponent } from './components/osd-entry-form/osd-entry-form.component';
+import { OsdMessageComponent } from './components/osd-message/osd-message.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,11 @@ import { BlackWhiteComponent } from './components/black-white/black-white.compon
     NavbarComponent,
     PersonalInformationComponent,
     AboutComponent,
-    BlackWhiteComponent
+    BlackWhiteComponent,
+    OsdSplashComponent,
+    OsdEntryFormComponent,
+    OsdMessageComponent,
+
   ],
   imports: [
     BrowserModule,

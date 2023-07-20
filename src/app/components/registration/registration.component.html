@@ -1,34 +1,133 @@
+<div class="splash-container">
+  <div style="display: flex; width: 100vw; height: 100vh">
+    <div class="left-image">1</div>
+    <div style="height: 100vh; width: 80vw" class="bk-image">
+      <img src="assets/images-splash/title-3.png" />
+      <form
+        class="container"
+        [formGroup]="registrationForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <mat-form-field>
+          <label style="color: black" for="firstname">Firstname:</label>
+          <input
+            matInput
+            type="text"
+            id="firstname"
+            formControlName="firstname"
+            [errorStateMatcher]="matcher"
+          />
+        </mat-form-field>
+        <span
+          *ngIf="
+            !registrationForm.get('firstname')?.valid &&
+            registrationForm.get('firstname')?.touched
+          "
+          style="color: red; margin: 8px"
+          >First name is required, please provide one</span
+        >
+        <mat-form-field>
+          <label style="color: black" for="lastname">Lastname:</label>
+          <input
+            matInput
+            type="text"
+            id="lastname"
+            formControlName="lastname"
+            [errorStateMatcher]="matcher"
+          />
+        </mat-form-field>
+        <span
+          *ngIf="
+            !registrationForm.get('lastname')?.valid &&
+            registrationForm.get('lastname')?.touched
+          "
+          style="color: red; margin: 8px"
+          >Last name is required, please provide one</span
+        >
 
-<div class="content">
-  <div class="news-container">
-    <h2 class="vip">GET VIP ACCESS</h2>
-    <p class="recommendation">Sign Up Now for Priority Entry to the Hottest FREE Summer Singles Event 30+</p>
-  </div>
-  <div class="card-container">
-    <form class="container" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="firstname">Firstname:</label>
-        <input type="text" id="firstname" formControlName="firstname" class="user-input">
-        <span *ngIf="!registrationForm.get('firstname')?.valid && registrationForm.get('firstname')?.touched" style="color: red; margin: 8px">First name is required, please provide one</span>
-      </div>
-      <div class="form-group">
-        <label for="lastname">Lastname:</label>
-        <input type="text" id="lastname" formControlName="lastname" class="user-input">
-        <span *ngIf="!registrationForm.get('lastname')?.valid && registrationForm.get('lastname')?.touched" style="color: red; margin: 8px">Last name is required, please provide one</span>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" formControlName="email" class="user-input">
-        <span *ngIf="registrationForm.get('email')?.errors?.['email']" style="color: red; margin: 8px;">Please provide a correct email format</span>
-        <span *ngIf="!registrationForm.get('email')?.valid && registrationForm.get('email')?.touched && !registrationForm.get('email')?.errors?.['email']" style="color: red; margin: 8px">Email is required, please provide one</span>
-      </div>
-      <div class="form-group">
-        <label for="code">Code:</label>
-        <input type="text" id="code" formControlName="code" class="user-input">
-      </div>
-      <button [disabled]="!registrationForm.valid" class="pure-material-button-contained" style="border-radius: 18px; color: #522b79" [ngClass]="{'submit-invalid': !registrationForm.valid}">Submit</button>
-        <!-- <button [disabled]="!registrationForm.valid"  class="" [ngClass]="{'submit-invalid': !registrationForm.valid}" type="submit">Submit</button> -->
+        <mat-form-field>
+          <label style="color: black" for="email">Email:</label>
+          <input
+            matInput
+            type="email"
+            id="email"
+            formControlName="email"
+            [errorStateMatcher]="matcher"
+          />
+        </mat-form-field>
+        <span
+          *ngIf="registrationForm.get('email')?.errors?.['email']"
+          style="color: red; margin: 8px"
+          >Please provide a correct email format</span
+        >
+        <span
+          *ngIf="!registrationForm.get('email')?.valid && registrationForm.get('email')?.touched && !registrationForm.get('email')?.errors?.['email']"
+          style="color: red; margin: 8px"
+          >Email is required, please provide one</span
+        >
 
-    </form>
+        <mat-form-field>
+          <mat-select
+            id="agegroup"
+            formControlName="agegroup"
+            [errorStateMatcher]="matcher"
+          >
+            <mat-option value="" disabled>Select an age group</mat-option>
+            <mat-option value="teen">18-25</mat-option>
+            <mat-option value="adult">25-40</mat-option>
+            <mat-option value="mature">40-60</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <span
+          *ngIf="
+            !registrationForm.get('agegroup')?.valid &&
+            registrationForm.get('agegroup')?.touched
+          "
+          style="color: red; margin: 8px"
+          >Age group is required, please select one</span
+        >
+
+        <mat-form-field>
+          <mat-select
+            id="gender"
+            formControlName="gender"
+            [errorStateMatcher]="matcher"
+          >
+            <mat-option value="" disabled>Select a gender</mat-option>
+            <mat-option value="female">Female</mat-option>
+            <mat-option value="male">Male</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <span
+          *ngIf="
+            !registrationForm.get('gender')?.valid &&
+            registrationForm.get('gender')?.touched
+          "
+          style="color: red; margin: 8px"
+          >Gender is required, please select one</span
+        >
+
+        <mat-form-field>
+          <label style="color: black" for="code">Code:</label>
+          <input
+            matInput
+            type="text"
+            id="code"
+            formControlName="code"
+            class="user-input"
+          />
+        </mat-form-field>
+        <button
+          type="submit"
+          [disabled]="!registrationForm.valid"
+          mat-raised-button
+          class="submit-btn"
+          style="width: 50%; background-color: white; height: 2.5rem"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+    <div class="right-image">1</div>
   </div>
 </div>

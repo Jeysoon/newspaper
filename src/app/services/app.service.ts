@@ -8,7 +8,6 @@ export class AppService {
 
 public currentRoute = new BehaviorSubject<string>('');
 
-// Expose the subject as an Observable
 public currentRoute$ = this.currentRoute.asObservable();
 
 constructor() { }
