@@ -1,22 +1,20 @@
 .left-image {
-  /* background-image: url('../../../assets/images-splash/left-bk.png'); */
-  background-image: url('../../../assets/images-splash/left-bk.png');
+  background-image: url('../../../assets/svg/osd-left.svg');
   background-repeat: repeat-y;
-  color: rgba(0, 0, 0, 0);
+  background-color: rgb(28,26,27);;
   width: 10%;
   background-size: contain;
 }
 
 .right-image {
-  background-image: url('../../../assets/images-splash/right-bk.png');
+  background-image: url('../../../assets/svg/osd-right.svg');
   background-repeat: repeat-y;
-  color: rgba(0, 0, 0, 0);
+  background-color: rgb(28,26,27);;
   width: 10%;
   background-size: contain;
 }
 .bk-image {
-  background-image: url('../../../assets/images-splash/bk.png');
-  color: white;
+  background-color: rgb(28,26,27);
   text-align: center;
   padding-top: 120px;
   height: 100vh;

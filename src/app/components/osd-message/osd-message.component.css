@@ -1,5 +1,5 @@
 .bk-image {
-  background-image: url('../../../assets/images-splash/bk.png');
+  background-color: rgb(28,26,27);
   color: white;
   text-align: center;
   padding-top: 64px;
@@ -10,10 +10,9 @@
   justify-content: space-around;
 }
 .register-btn {
-  width: 30vw;
-  height: 2rem;
+  width: 240px;
+  text-transform: uppercase;
   border: none;
-  border-radius: 8px;
   position: relative;
   bottom: 2rem;
 }

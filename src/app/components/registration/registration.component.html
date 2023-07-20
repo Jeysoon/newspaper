@@ -1,115 +1,124 @@
 <div class="splash-container">
   <div style="display: flex; width: 100vw; height: 100vh">
-    <div class="left-image">1</div>
+    <div class="left-image"></div>
     <div style="height: 100vh; width: 80vw" class="bk-image">
-      <img src="assets/images-splash/title-3.png" />
+      <img src="assets/svg/early-access.svg" style="width: 50vw; margin-bottom: 32px;">
       <form
         class="container"
         [formGroup]="registrationForm"
         (ngSubmit)="onSubmit()"
       >
         <mat-form-field>
-          <label style="color: black" for="firstname">Firstname:</label>
           <input
+            placeholder="First Name"
             matInput
             type="text"
             id="firstname"
             formControlName="firstname"
             [errorStateMatcher]="matcher"
           />
-        </mat-form-field>
-        <span
+          <mat-error
           *ngIf="
             !registrationForm.get('firstname')?.valid &&
             registrationForm.get('firstname')?.touched
           "
           style="color: red; margin: 8px"
-          >First name is required, please provide one</span
-        >
+          >First name is required, please provide one
+        </mat-error>
+        </mat-form-field>
+
         <mat-form-field>
-          <label style="color: black" for="lastname">Lastname:</label>
           <input
+            placeholder="Last Name"
             matInput
             type="text"
             id="lastname"
             formControlName="lastname"
             [errorStateMatcher]="matcher"
           />
-        </mat-form-field>
-        <span
+          <mat-error
           *ngIf="
             !registrationForm.get('lastname')?.valid &&
             registrationForm.get('lastname')?.touched
           "
           style="color: red; margin: 8px"
-          >Last name is required, please provide one</span
-        >
+          >
+          Last name is required, please provide one
+        </mat-error>
+        </mat-form-field>
+
+
 
         <mat-form-field>
-          <label style="color: black" for="email">Email:</label>
+          <!-- <label style="color: black" for="email">Email</label> -->
           <input
+            placeholder="Email"
             matInput
             type="email"
             id="email"
             formControlName="email"
             [errorStateMatcher]="matcher"
           />
-        </mat-form-field>
-        <span
+          <mat-error
           *ngIf="registrationForm.get('email')?.errors?.['email']"
-          style="color: red; margin: 8px"
-          >Please provide a correct email format</span
-        >
-        <span
+          style="color: red;"
+          >
+          Please provide a correct email format
+        </mat-error>
+        </mat-form-field>
+
+        <mat-error
           *ngIf="!registrationForm.get('email')?.valid && registrationForm.get('email')?.touched && !registrationForm.get('email')?.errors?.['email']"
           style="color: red; margin: 8px"
-          >Email is required, please provide one</span
-        >
+          >
+          Email is required, please provide one
+        </mat-error>
 
         <mat-form-field>
           <mat-select
             id="agegroup"
             formControlName="agegroup"
             [errorStateMatcher]="matcher"
+            placeholder="Select an Age Group"
           >
-            <mat-option value="" disabled>Select an age group</mat-option>
             <mat-option value="teen">18-25</mat-option>
             <mat-option value="adult">25-40</mat-option>
             <mat-option value="mature">40-60</mat-option>
           </mat-select>
         </mat-form-field>
-        <span
+        <mat-error
           *ngIf="
             !registrationForm.get('agegroup')?.valid &&
             registrationForm.get('agegroup')?.touched
           "
-          style="color: red; margin: 8px"
-          >Age group is required, please select one</span
-        >
+          style="color: red;"
+          >
+          Age group is required, please select one
+        </mat-error>
 
         <mat-form-field>
           <mat-select
             id="gender"
             formControlName="gender"
             [errorStateMatcher]="matcher"
+            placeholder="Select a Gender"
           >
-            <mat-option value="" disabled>Select a gender</mat-option>
             <mat-option value="female">Female</mat-option>
             <mat-option value="male">Male</mat-option>
           </mat-select>
-        </mat-form-field>
-        <span
+          <mat-error
           *ngIf="
             !registrationForm.get('gender')?.valid &&
             registrationForm.get('gender')?.touched
           "
           style="color: red; margin: 8px"
-          >Gender is required, please select one</span
-        >
+          >Gender is required, please select one
+          </mat-error>
+        </mat-form-field>
 
         <mat-form-field>
-          <label style="color: black" for="code">Code:</label>
           <input
+            placeholder="Code"
             matInput
             type="text"
             id="code"
@@ -117,17 +126,24 @@
             class="user-input"
           />
         </mat-form-field>
-        <button
-          type="submit"
-          [disabled]="!registrationForm.valid"
-          mat-raised-button
-          class="submit-btn"
-          style="width: 50%; background-color: white; height: 2.5rem"
-        >
-          Submit
-        </button>
+
+        <div style="color: white; margin-bottom: 32px;">
+          This code comes from a friend that referred you to this site. If you have it, please enter it above.
+        </div>
+
+        <div style="text-align: center;">
+          <button
+            type="submit"
+            [disabled]="!registrationForm.valid"
+            mat-raised-button
+            class="submit-btn"
+            style="width: 50%; background-color: white; height: 2.5rem"
+          >
+            SUBMIT
+          </button>
+        </div>
       </form>
     </div>
-    <div class="right-image">1</div>
+    <div class="right-image"></div>
   </div>
 </div>
