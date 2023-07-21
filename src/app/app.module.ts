@@ -7,9 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
-import { AboutComponent } from './components/about/about.component';
-
-import { BlackWhiteComponent } from './components/black-white/black-white.component';
 import { OsdSplashComponent } from './components/splash/osd-splash.component';
 import { OsdEntryFormComponent } from './components/osd-entry-form/osd-entry-form.component';
 import { OsdMessageComponent } from './components/osd-message/osd-message.component';
@@ -17,6 +14,7 @@ import { OsdMessageComponent } from './components/osd-message/osd-message.compon
 import { MaterialModule } from './materials.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,13 +22,12 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     RegistrationComponent,
     NavbarComponent,
     PersonalInformationComponent,
-    AboutComponent,
-    BlackWhiteComponent,
     OsdSplashComponent,
     OsdEntryFormComponent,
     OsdMessageComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     MaterialModule,

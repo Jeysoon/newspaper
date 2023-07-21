@@ -73,16 +73,14 @@
         </mat-error>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field *ngIf="(ageGroups$ | async) as data">
           <mat-select
             id="ageGroup"
             formControlName="ageGroup"
             [errorStateMatcher]="matcher"
             placeholder="Select an Age Group"
           >
-            <mat-option value="teen">18-25</mat-option>
-            <mat-option value="adult">25-40</mat-option>
-            <mat-option value="mature">40-60</mat-option>
+            <mat-option *ngFor="let item of data" [value]="item.id">{{ item.name }}</mat-option>
           </mat-select>
           <mat-error
           *ngIf="
@@ -95,15 +93,14 @@
         </mat-error>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field *ngIf="(genders$ | async) as data">
           <mat-select
             id="gender"
             formControlName="gender"
             [errorStateMatcher]="matcher"
             placeholder="Select a Gender"
           >
-            <mat-option value="female">Female</mat-option>
-            <mat-option value="male">Male</mat-option>
+            <mat-option *ngFor="let item of data" [value]="item.id">{{ item.name }}</mat-option>
           </mat-select>
           <mat-error
           *ngIf="
@@ -113,6 +110,26 @@
           style="color: red;"
           >Gender is required, please select one
           </mat-error>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="(heard$ | async) as data">
+          <mat-select
+            id="heard"
+            formControlName="heard"
+            [errorStateMatcher]="matcher"
+            placeholder="Where did you hear about us?"
+          >
+            <mat-option *ngFor="let item of data" [value]="item.id">{{ item.name }}</mat-option>
+          </mat-select>
+          <mat-error
+          *ngIf="
+            !registrationForm.get('heard')?.valid &&
+            registrationForm.get('heard')?.touched
+          "
+          style="color: red;"
+          >
+          You have to tell us where you heard about us.
+        </mat-error>
         </mat-form-field>
 
         <div style="display: flex;">
