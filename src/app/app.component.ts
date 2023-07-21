@@ -9,7 +9,7 @@ import { GlobalDataStore } from './shared/store/global-data.store';
 export class AppComponent extends GlobalDataStore<any> implements OnInit {
 
   constructor() {
-    super({ server: `/`, endpoint: ['healthcheck'] })
+    super({ server: 'osd', endpoint: ['healthcheck'] })
   }
 
   ngOnInit() {

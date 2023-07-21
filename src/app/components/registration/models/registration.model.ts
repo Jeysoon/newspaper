@@ -1,13 +1,13 @@
 export interface RegistrationInfoInterface {
   id: number
-  firstName: string
-  lastName: string
+  first_name: string
+  last_name: string
   email: string
-  ageGroup: number
-  gender: number
-  heard: number
-  ageAppropriate: boolean
-  code: string
+  age_group_id: number
+  gender_id: number
+  heard_id: number
+  age_appropriate: boolean
+  code_id: string
 }
 
 export class RegistrationInfo implements RegistrationInfoInterface {
@@ -15,14 +15,14 @@ export class RegistrationInfo implements RegistrationInfoInterface {
   constructor(
 
     public id = 0,
-    public firstName = '',
-    public lastName = '',
+    public first_name = '',
+    public last_name = '',
     public email = '',
-    public ageGroup = 0,
-    public gender = 0,
-    public heard = 0,
-    public ageAppropriate = false,
-    public code = '',
+    public age_group_id = 0,
+    public gender_id = 0,
+    public heard_id = 0,
+    public age_appropriate = false,
+    public code_id = '',
 
     ) {}
 

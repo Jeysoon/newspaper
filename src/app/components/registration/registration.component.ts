@@ -32,10 +32,10 @@ export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> imp
     firstName: ['', {validators: [Validators.required]}],
     lastName: ['', {validators: [Validators.required]}],
     email: ['', { validators: [Validators.email, Validators.required], updateOn: 'blur' }],
-    ageGroup: ['', { validators: [Validators.required]}],
-    gender: ['', { validators: [Validators.required]}],
-    heard: ['', { validators: [Validators.required]}],
-    ageAppropriate: ['', Validators.required],
+    ageGroup: [0, { validators: [Validators.required]}],
+    gender: [0, { validators: [Validators.required]}],
+    heard: [0, { validators: [Validators.required]}],
+    ageAppropriate: [false, Validators.required],
     code: ['', Validators.minLength(8)],
   });
 
@@ -45,7 +45,7 @@ export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> imp
     private route: ActivatedRoute,
     private registrationSelectorsService: RegistrationSelectorsService
   ) {
-    super({ server: `/`, endpoint: ['healthcheck'] })
+    super({ server: 'osd', endpoint: ['registrations'] })
   }
 
   ngOnInit() {
@@ -57,11 +57,10 @@ export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> imp
 
     if(!this.registrationForm.valid) return
 
-    console.log('DATA:', this.registrationForm.value);
-
     const data = RegistrationInfo.adapt(this.registrationForm.value)
+    console.log('DATA:', data);
 
-    this.params = []
+    this.params = [data.code_id]
     this.addRecord(data)
 
     this.router.navigate(['thankyou'])
