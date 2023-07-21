@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
+
 import { RouterModule, Routes } from '@angular/router';
+
 import { RegistrationComponent } from './components/registration/registration.component';
 import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
 import { AboutComponent } from './components/about/about.component';

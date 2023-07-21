@@ -13,10 +13,10 @@
   width: 10%;
   background-size: contain;
 }
+
 .bk-image {
   background-color: rgb(28,26,27);
   text-align: center;
-  padding-top: 120px;
   height: 100vh;
   display: flex;
   flex-direction: column;

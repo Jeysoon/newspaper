@@ -1,12 +1,3 @@
-.spash-container {
-  display: flex;
-   flex-direction: column;
-    width: 100vw;
-}
-.top-image {
-  background-repeat: repeat-x;
-  color: rgba(0, 0, 0, 0);
-}
 
 .left-image {
   background-image: url('../../../assets/svg/osd-left.svg');
@@ -25,3 +16,4 @@
   width: 10%;
   background-size: contain;
 }
+

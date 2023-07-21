@@ -1,26 +1,29 @@
 <div class="splash-container">
-  <div style="display: flex; width: 100vw; height: 100vh">
+  <div style="display: flex; width: 100vw; height: 100vh;">
     <div class="left-image"></div>
     <div style="height: 100vh; width: 80vw" class="bk-image">
-      <img src="assets/svg/early-access.svg" style="width: 50vw; margin-bottom: 32px;">
+      <div style="padding-top: 100px;">
+        <img src="assets/svg/early-access.svg" style="width: 50vw; margin-bottom: 32px; max-width: 500px; min-width: 320px">
+      </div>
       <form
         class="container"
         [formGroup]="registrationForm"
         (ngSubmit)="onSubmit()"
+        style="gap: 12px"
       >
         <mat-form-field>
           <input
             placeholder="First Name"
             matInput
             type="text"
-            id="firstname"
-            formControlName="firstname"
+            id="firstName"
+            formControlName="firstName"
             [errorStateMatcher]="matcher"
           />
           <mat-error
           *ngIf="
-            !registrationForm.get('firstname')?.valid &&
-            registrationForm.get('firstname')?.touched
+            !registrationForm.get('firstName')?.valid &&
+            registrationForm.get('firstName')?.touched
           "
           style="color: red; margin: 8px"
           >First name is required, please provide one
@@ -32,14 +35,14 @@
             placeholder="Last Name"
             matInput
             type="text"
-            id="lastname"
-            formControlName="lastname"
+            id="lastName"
+            formControlName="lastName"
             [errorStateMatcher]="matcher"
           />
           <mat-error
           *ngIf="
-            !registrationForm.get('lastname')?.valid &&
-            registrationForm.get('lastname')?.touched
+            !registrationForm.get('lastName')?.valid &&
+            registrationForm.get('lastName')?.touched
           "
           style="color: red; margin: 8px"
           >
@@ -47,10 +50,7 @@
         </mat-error>
         </mat-form-field>
 
-
-
         <mat-form-field>
-          <!-- <label style="color: black" for="email">Email</label> -->
           <input
             placeholder="Email"
             matInput
@@ -65,19 +65,18 @@
           >
           Please provide a correct email format
         </mat-error>
-        </mat-form-field>
-
         <mat-error
           *ngIf="!registrationForm.get('email')?.valid && registrationForm.get('email')?.touched && !registrationForm.get('email')?.errors?.['email']"
-          style="color: red; margin: 8px"
+          style="color: red;"
           >
           Email is required, please provide one
         </mat-error>
+        </mat-form-field>
 
         <mat-form-field>
           <mat-select
-            id="agegroup"
-            formControlName="agegroup"
+            id="ageGroup"
+            formControlName="ageGroup"
             [errorStateMatcher]="matcher"
             placeholder="Select an Age Group"
           >
@@ -85,16 +84,16 @@
             <mat-option value="adult">25-40</mat-option>
             <mat-option value="mature">40-60</mat-option>
           </mat-select>
-        </mat-form-field>
-        <mat-error
+          <mat-error
           *ngIf="
-            !registrationForm.get('agegroup')?.valid &&
-            registrationForm.get('agegroup')?.touched
+            !registrationForm.get('ageGroup')?.valid &&
+            registrationForm.get('ageGroup')?.touched
           "
           style="color: red;"
           >
           Age group is required, please select one
         </mat-error>
+        </mat-form-field>
 
         <mat-form-field>
           <mat-select
@@ -111,24 +110,36 @@
             !registrationForm.get('gender')?.valid &&
             registrationForm.get('gender')?.touched
           "
-          style="color: red; margin: 8px"
+          style="color: red;"
           >Gender is required, please select one
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field>
-          <input
-            placeholder="Code"
-            matInput
-            type="text"
-            id="code"
-            formControlName="code"
-            class="user-input"
-          />
-        </mat-form-field>
+        <div style="display: flex;">
+          <mat-form-field>
+            <input
+              placeholder="Code"
+              matInput
+              type="text"
+              maxlength="8"
+              id="code"
+              formControlName="code"
+              class="user-input"
+            />
+          </mat-form-field>
 
-        <div style="color: white; margin-bottom: 32px;">
-          This code comes from a friend that referred you to this site. If you have it, please enter it above.
+          <div style="color: white; margin-bottom: 16px; margin-left: 16px; margin-top: 8px;">
+            This code comes from a friend that referred you to this site. If you have it, please enter it above.
+          </div>
+        </div>
+
+        <div style="margin-bottom: 32px;">
+          <div style="display: flex;">
+            <div><input type="checkbox" formControlName="ageAppropriate"></div>
+            <div style="color: white; padding-top: 4px; margin-left: 8px;">
+              Please confirm that you are 18 years or older
+            </div>
+          </div>
         </div>
 
         <div style="text-align: center;">
@@ -143,7 +154,9 @@
           </button>
         </div>
       </form>
+
     </div>
     <div class="right-image"></div>
   </div>
 </div>
+

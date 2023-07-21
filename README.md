@@ -26,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 # newspaper
+
+## Run Local Proxy Config
+
+`ng serve --proxy-config proxy.conf-local.json --port 8080`
