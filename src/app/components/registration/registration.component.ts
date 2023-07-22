@@ -6,7 +6,11 @@ import {ErrorStateMatcher} from '@angular/material/core';
 
 import { GlobalDataStore } from 'src/app/shared/store/global-data.store';
 import { RegistrationInfo } from './models/registration.model';
-import { RegistrationSelectorsService } from './services/registration-selectors.service';
+
+import { GendersService } from './services/genders.service';
+import { WhereHeardService } from './services/where-heard.service';
+import { AgeGroupsService } from './services/age-groups.service';
+import { concatMap, first, map, take } from 'rxjs';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -22,9 +26,13 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> implements OnInit {
 
-  genders$ = this.registrationSelectorsService.genders()
-  heard$ = this.registrationSelectorsService.whereHeard()
-  ageGroups$ = this.registrationSelectorsService.ageGroups()
+  genders$ = this.genders.data$
+
+  heard$ = this.whereHeard.data$.pipe(
+    map(items => items.sort((a: any,b: any) => a.name.localeCompare(b.name)))
+  )
+
+  ageGroups$ = this.ageGroups.data$
 
   matcher = new MyErrorStateMatcher();
 
@@ -47,14 +55,23 @@ export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> imp
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
-    private registrationSelectorsService: RegistrationSelectorsService
+    private genders: GendersService,
+    private whereHeard: WhereHeardService,
+    private ageGroups: AgeGroupsService,
   ) {
     super({ server: 'osd', endpoint: ['registrations'] })
   }
 
   ngOnInit() {
-   const code = this.route.snapshot.paramMap.get('code');
-   if(code) this.registrationForm.patchValue({ code })
+
+    this.genders.getData()
+    this.whereHeard.getData()
+    this.ageGroups.getData()
+
+    const code = this.route.snapshot.paramMap.get('code');
+    const codeClean = (code) ? code.substring(0, 8) : ''
+    if(code) this.registrationForm.patchValue({ code: codeClean })
+
   }
 
   onSubmit(){
@@ -62,12 +79,21 @@ export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> imp
     if(!this.registrationForm.valid) return
 
     const data = RegistrationInfo.adapt(this.registrationForm.value)
-    console.log('DATA:', data);
 
-    this.params = [data.code_id]
+    this.params = []
     this.addRecord(data)
 
-    this.router.navigate(['thankyou'])
+    this.data$.pipe(
+      take(1),
+    ).subscribe(data => {
+      this.isPending$.pipe(
+        first(isPending => !isPending),
+        take(1)
+      ).subscribe(() => {
+        this.router.navigate(['thankyou'])
+      })
+    })
+
   }
 
 }
