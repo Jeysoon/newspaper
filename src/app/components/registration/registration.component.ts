@@ -28,6 +28,10 @@ export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> imp
 
   matcher = new MyErrorStateMatcher();
 
+  get isValid() {
+    return (this.registrationForm.valid)
+  }
+
   registrationForm = this.fb.group({
     firstName: ['', {validators: [Validators.required]}],
     lastName: ['', {validators: [Validators.required]}],
@@ -35,7 +39,7 @@ export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> imp
     ageGroup: [0, { validators: [Validators.required]}],
     gender: [0, { validators: [Validators.required]}],
     heard: [0, { validators: [Validators.required]}],
-    ageAppropriate: [false, Validators.required],
+    ageAppropriate: [null, Validators.requiredTrue],
     code: ['', Validators.minLength(8)],
   });
 

@@ -176,3 +176,16 @@ h2 {
     color: white;
   }
 }
+
+.checkbox {
+  --mdc-checkbox-unselected-focus-icon-color: white;
+  --mdc-checkbox-unselected-hover-icon-color: white;
+  --mdc-checkbox-unselected-icon-color: white;
+  --mdc-checkbox-label-color: white;
+
+}
+
+.textColor {
+  color: white;
+  font-size: min(max(16px, 4vw), 22px);
+}

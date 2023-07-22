@@ -155,18 +155,15 @@
         </div>
 
         <div style="margin-bottom: 32px;">
-          <div style="display: flex;">
-            <div><input type="checkbox" formControlName="ageAppropriate"></div>
-            <div style="color: white; padding-top: 4px; margin-left: 8px;">
-              Please confirm that you are 18 years or older
-            </div>
-          </div>
+          <mat-checkbox class="checkbox" value="" color="accent" formControlName="ageAppropriate">
+            <span class="textColor">I confirm that I am 19 years or older</span>
+          </mat-checkbox>
         </div>
 
         <div style="text-align: center;">
           <button
             type="submit"
-            [disabled]="!registrationForm.valid"
+            [disabled]="!isValid"
             mat-raised-button
             class="submit-btn"
             style="width: 50%; background-color: white; height: 2.5rem; margin-bottom: 40px"
