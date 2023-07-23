@@ -1,6 +1,6 @@
 {
   "/api/*": {
-    "target": "https://wavecoders.ca/rest/wc",
+    "target": "https://wavecoders.ca/rest/wc/osd",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": { "^/api": "" },
