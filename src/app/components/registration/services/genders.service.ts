@@ -9,7 +9,7 @@ import { GlobalDataStore } from 'src/app/shared/store/global-data.store';
 export class GendersService extends GlobalDataStore<Gender> {
 
   constructor() {
-    super({ server: 'osd', endpoint: ['genders'] })
+    super({ server: '', endpoint: ['genders'] })
    }
 
   getData() {

@@ -9,7 +9,7 @@ import { GlobalDataStore } from 'src/app/shared/store/global-data.store';
 export class WhereHeardService extends GlobalDataStore<WhereHeard> {
 
   constructor() {
-    super({ server: 'osd', endpoint: ['heard'] })
+    super({ server: '', endpoint: ['heard'] })
    }
 
   getData() {

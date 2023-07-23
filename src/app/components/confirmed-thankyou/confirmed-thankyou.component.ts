@@ -18,7 +18,7 @@ export class ConfirmedThankyouComponent extends GlobalDataStore<ConfirmedRegistr
   constructor(
     private route: ActivatedRoute,
   ) {
-    super({ server: 'osd', endpoint: ['registrations', 'code'] })
+    super({ server: '', endpoint: ['registrations', 'code'] })
   }
 
   ngOnInit() {

@@ -29,4 +29,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Run Local Proxy Config
 
+### DEVELOPMENT
+
 `ng serve --proxy-config proxy.conf-local.json --port 8080`
+
+### PRODUCTION
+
+`ng serve --proxy-config proxy.conf-prod.json --port 8080`

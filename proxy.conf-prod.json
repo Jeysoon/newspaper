@@ -1,6 +1,6 @@
 {
   "/api/*": {
-    "target": "http://localhost:8502/rest/pigeon/osd",
+    "target": "https://wavecoders.ca/rest/wc",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": { "^/api": "" },

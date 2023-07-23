@@ -9,7 +9,7 @@ import { GlobalDataStore } from 'src/app/shared/store/global-data.store';
 export class AgeGroupsService extends GlobalDataStore<AgeGroups> {
 
   constructor() {
-    super({ server: 'osd', endpoint: ['agegroups'] })
+    super({ server: '', endpoint: ['agegroups'] })
    }
 
   getData() {

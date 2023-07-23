@@ -59,7 +59,7 @@ export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> imp
     private whereHeard: WhereHeardService,
     private ageGroups: AgeGroupsService,
   ) {
-    super({ server: 'osd', endpoint: ['registrations'] })
+    super({ server: '', endpoint: ['registrations'] })
   }
 
   ngOnInit() {
