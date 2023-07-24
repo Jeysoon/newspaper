@@ -1,0 +1,36 @@
+<div
+  class="box" style="width: 90vw;"
+  [class.error]="data.type === -1"
+  [class.success]="data.type === 0"
+  [class.warning]="data.type === 2"
+  [class.normal]="data.type === 3"
+>
+
+  <div *ngIf="data.template; else default">
+    <ng-template
+    [ngTemplateOutlet]="data.template"
+    [ngTemplateOutletContext]="{ message: data.message }"
+    ></ng-template>
+  </div>
+
+  <ng-template #default>
+
+    <div style="display: flex" class="container">
+      <div class="centered-element">
+        <div style="flex:1">{{ data.message }}</div>
+      </div>
+    </div>
+
+    <button
+      mat-button
+      (click)="onDismiss()"
+      *ngIf="!data.autoDismiss"
+      style="line-height: 0; color: white"
+      >
+      {{ data.dismissText }}
+    </button>
+
+  </ng-template>
+
+
+</div>

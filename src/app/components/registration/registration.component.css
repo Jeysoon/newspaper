@@ -189,3 +189,9 @@ h2 {
   color: white;
   font-size: min(max(16px, 4vw), 22px);
 }
+
+.err {
+  color: rgb(219, 84, 84);
+  position: absolute;
+  left: 0;
+}

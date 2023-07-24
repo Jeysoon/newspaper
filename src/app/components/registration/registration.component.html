@@ -64,16 +64,22 @@
           />
           <mat-error
           *ngIf="registrationForm.get('email')?.errors?.['email']"
-          style="color: red;"
+          class="err"
           >
           Please provide a correct email format
         </mat-error>
         <mat-error
-          *ngIf="!registrationForm.get('email')?.valid && registrationForm.get('email')?.touched && !registrationForm.get('email')?.errors?.['email']"
-          style="color: red;"
+          *ngIf="!registrationForm.get('email')?.valid && registrationForm.get('email')?.touched && registrationForm.get('email')?.errors?.['email']"
+          class="err"
           >
           Email is required, please provide one
         </mat-error>
+        <mat-error
+        *ngIf="!registrationForm.get('email')?.valid && registrationForm.get('email')?.touched && registrationForm.get('email')?.errors?.['exists']"
+        class="err"
+        >
+        Email and User already exists
+      </mat-error>
         </mat-form-field>
 
         <mat-form-field *ngIf="(ageGroups$ | async) as data">
@@ -90,7 +96,7 @@
             !registrationForm.get('ageGroup')?.valid &&
             registrationForm.get('ageGroup')?.touched
           "
-          style="color: red;"
+          class="err"
           >
           Age group is required, please select one
         </mat-error>
@@ -110,7 +116,7 @@
             !registrationForm.get('gender')?.valid &&
             registrationForm.get('gender')?.touched
           "
-          style="color: red;"
+          class="err"
           >Gender is required, please select one
           </mat-error>
         </mat-form-field>
@@ -129,7 +135,7 @@
             !registrationForm.get('heard')?.valid &&
             registrationForm.get('heard')?.touched
           "
-          style="color: red;"
+          class="err"
           >
           You have to tell us where you heard about us.
         </mat-error>
@@ -178,3 +184,4 @@
   </div>
 </div>
 
+<h1 style="color: white">{{ isValid }}</h1>

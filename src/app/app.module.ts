@@ -14,7 +14,11 @@ import { OsdMessageComponent } from './components/osd-message/osd-message.compon
 import { MaterialModule } from './materials.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
+
+import { SnackbarErrorModule } from './shared/snackbar-error/snackbar-error.module';
+import { ErrorType } from './shared/snackbar-error/models/error-type.enum';
 
 @NgModule({
   declarations: [
@@ -31,10 +35,19 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
+    SnackbarErrorModule.forRoot({
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+      autoDismiss: false,
+      duration: 3 * 1000,
+      type: ErrorType.NONE
+    }),
     StoreModule.forRoot({}, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,7 +10,8 @@ import { RegistrationInfo } from './models/registration.model';
 import { GendersService } from './services/genders.service';
 import { WhereHeardService } from './services/where-heard.service';
 import { AgeGroupsService } from './services/age-groups.service';
-import { concatMap, first, map, take } from 'rxjs';
+import { debounce, first, map, take } from 'rxjs';
+import { CheckEmailService } from './services/check-email.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -40,6 +41,10 @@ export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> imp
     return (this.registrationForm.valid)
   }
 
+  get emailControl() {
+    return this.registrationForm.controls.email
+  }
+
   registrationForm = this.fb.group({
     firstName: ['', {validators: [Validators.required]}],
     lastName: ['', {validators: [Validators.required]}],
@@ -51,6 +56,8 @@ export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> imp
     code: ['', Validators.minLength(8)],
   });
 
+  isEmpty = (obj: any) => Object.keys(obj).length === 0 && obj.constructor === Object
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -58,6 +65,7 @@ export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> imp
     private genders: GendersService,
     private whereHeard: WhereHeardService,
     private ageGroups: AgeGroupsService,
+    private checkEmailService: CheckEmailService,
   ) {
     super({ server: '', endpoint: ['registrations'] })
   }
@@ -71,6 +79,27 @@ export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> imp
     const code = this.route.snapshot.paramMap.get('code');
     const codeClean = (code) ? code.substring(0, 8) : ''
     if(code) this.registrationForm.patchValue({ code: codeClean })
+
+    this.emailControl.valueChanges
+    .subscribe(emailAddress => {
+      console.log(this.registrationForm.controls)
+      if(this.emailControl.valid && emailAddress) {
+        this.checkEmailService.params = [emailAddress]
+        this.checkEmailService.fetchRecord()
+      }
+
+    })
+
+    this.checkEmailService.dataRecord$
+    .subscribe(data => {
+      if(!this.isEmpty(data)) {
+        if(!data.exists) {
+          this.emailControl.setValidators(null)
+        } else {
+          this.emailControl.setErrors({'exists': data.exists});
+        }
+      }
+    })
 
   }
 
