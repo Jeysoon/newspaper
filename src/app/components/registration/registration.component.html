@@ -1,16 +1,16 @@
 <div class="splash-container">
-  <div style="display: flex; width: 100vw; height: 100vh;">
-    <div class="left-image"></div>
-    <div style="width: 80vw; overflow: scroll; " class="bk-image">
-      <div style="margin-top: 40px; text-align: center; margin-top: 100px;">
-        <!-- <img src="assets/banners/coaster-bash.svg" style="width: 50vw; max-width: 500px; min-width: 320px"> -->
-        <h2 style="line-height: 120%;">
+  <div class="splash-container__content">
+    <div class="splash-container__left-image" ></div>
+    <div class="splash-container__bk-image">
+      <div class="splash-container__header">
+
+        <h2>
           REGISTER NOW FOR VIP ACCESS TO<br>
           THE BIGGEST EVENT OF THE YEAR
         </h2>
       </div>
       <form
-        class="container"
+        class="form"
         [formGroup]="registrationForm"
         (ngSubmit)="onSubmit()"
         style="gap: 12px"
@@ -181,8 +181,7 @@
       </form>
 
     </div>
-    <div class="right-image"></div>
+    <div class="splash-container__right-image"></div>
   </div>
 </div>
 
-<h1 style="color: white">{{ isValid }}</h1>
