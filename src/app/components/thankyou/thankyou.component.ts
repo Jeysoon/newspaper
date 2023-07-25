@@ -22,7 +22,6 @@ export class ThankyouComponent extends GlobalDataStore<ConfirmedRegistration> im
    const code = this.route.snapshot.paramMap.get('code');
 
    if(code) {
-    console.log(code)
     this.params = [code]
     this.updateRecord({ id: 0, confirmed: false })
    }

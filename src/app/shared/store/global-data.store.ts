@@ -32,7 +32,8 @@ export class GlobalDataStore<T extends { id: number }> extends ComponentStore<Gl
   nextPollingInSeconds$ = this.nextPollingInSeconds.asObservable()
 
   private get path() {
-    return this.pathJoin([ this.options.server, ...this.options.endpoint, ...this.params ])
+    const res = this.pathJoin([ this.options.server, ...this.options.endpoint ])
+    return (this.params.length > 0) ? this.pathJoin([...res, ...this.params ]) : res
   }
 
   private get hasPolling() {
