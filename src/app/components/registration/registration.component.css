@@ -1,5 +1,3 @@
-
-
 .content {
   width: 80%;
   height: 62%;
@@ -20,25 +18,17 @@
   overflow: hidden;
 }
 @media (min-width: 700px) {
-  .content{
+  .content {
     width: 30%;
   }
 }
-.container {
-  /* width: 80%;
-  border-radius: 32px;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 1rem;
-  margin-top:10%; */
+.form {
   display: flex;
   flex-direction: column;
   min-width: 150px;
   max-width: 500px;
   width: 100%;
-
 }
-
 
 .form-group {
   display: flex !important;
@@ -49,8 +39,6 @@
 .form-group label {
   margin-bottom: 5px;
 }
-
-
 
 .submit-button {
   border: 3px double #2f2f2f;
@@ -94,11 +82,6 @@ input {
   justify-content: space-around;
 }
 
-
-
-
-
-
 .submit-invalid {
   cursor: not-allowed;
   pointer-events: none;
@@ -107,46 +90,29 @@ input {
   background-color: gray;
 }
 
-.left-image {
-  background-image: url('../../../assets/svg/osd-left.svg');
-  background-repeat: repeat-y;
-  color: rgba(0, 0, 0, 0);
-  background-color: rgb(28,26,27);
-  width: 10%;
-  background-size: contain;
-}
 
-.right-image {
-  background-image: url('../../../assets/svg/osd-right.svg');
-  background-repeat: repeat-y;
-  color: rgba(0, 0, 0, 0);
-  background-color: rgb(28,26,27);
-  width: 10%;
-  background-size: contain;
-}
 
-.bk-image {
-  background-color: rgb(28,26,27);
-  /* padding-top: 120px; */
+.splash-container__bk-image {
+  background-color: rgb(28, 26, 27);
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   width: 80vw;
+  overflow: scroll;
 }
 
 ::ng-deep .mat-checkbox-frame {
-  border-color: white
+  border-color: white;
 }
 
 input[type="checkbox"] {
   accent-color: desired-color;
   width: 22px;
   height: 22px;
-  }
+}
 
-  /* Create a custom checkbox */
 .checkmark {
   position: absolute;
   top: 0;
@@ -196,4 +162,32 @@ h2 {
   left: 0;
 }
 
-
+.splash-container__content {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+.splash-container__left-image {
+  background-image: url('../../../assets/svg/osd-left.svg');
+  background-repeat: repeat-y;
+  color: rgba(0, 0, 0, 0);
+  background-color: rgb(28, 26, 27);
+  width: 10%;
+  background-size: contain;
+}
+.splash-container__right-image {
+  background-image: url('../../../assets/svg/osd-right.svg');
+  background-repeat: repeat-y;
+  color: rgba(0, 0, 0, 0);
+  background-color: rgb(28, 26, 27);
+  width: 10%;
+  background-size: contain;
+}
+.splash-container__header {
+  margin-top: 40px;
+  text-align: center;
+  margin-top: 100px;
+}
+.header__title{
+  line-height: 120%;
+}
