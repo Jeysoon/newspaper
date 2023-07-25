@@ -109,7 +109,6 @@ export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> imp
 
     const data = RegistrationInfo.adapt(this.registrationForm.value)
 
-    this.params = []
     this.addRecord(data)
 
     this.data$.pipe(
