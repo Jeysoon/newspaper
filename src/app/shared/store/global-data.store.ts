@@ -215,7 +215,7 @@ export class GlobalDataStore<T extends { id: number }> extends ComponentStore<Gl
   readonly updateRecord = this.effect<T>(data =>
     data.pipe(
       tap(() => this.isPending$.next(true)),
-      concatMap((data?: any) => this.apiService.updateRecord(`${this.path}`, data).pipe(
+      concatMap((data?: any) => this.apiService.updateRecord(this.pathJoin([ this.path ]), data).pipe(
         tap({
           next: (res) => {
             this.updateData$(data)
