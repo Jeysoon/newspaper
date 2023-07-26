@@ -172,7 +172,7 @@ export class GlobalDataStore<T extends { id: number }> extends ComponentStore<Gl
   readonly addRecord = this.effect<T>(data =>
     data.pipe(
       tap(() => this.isPending$.next(true)),
-      switchMap((data: T) => this.apiService.createRecord(this.path, data).pipe(
+      switchMap((data: T) => this.apiService.createRecord(this.pathJoin([ this.path ]), data).pipe(
         tap({
           next: (res) => {
             this.addData$(res)
