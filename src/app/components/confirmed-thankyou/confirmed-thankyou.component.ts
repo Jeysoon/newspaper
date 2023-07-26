@@ -27,7 +27,7 @@ export class ConfirmedThankyouComponent extends GlobalDataStore<ConfirmedRegistr
     const confirmationCode = (code) ? code.substring(0, 8) : ''
 
     this.params = [confirmationCode]
-    this.updateRecord({ id: 0, confirmed: true })
+    this.fetchRecord()
 
     this.data$.pipe(
       take(1),
