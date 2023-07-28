@@ -1,6 +1,6 @@
 {
   "/api/*": {
-    "target": "http://10.0.0.16:8502/rest/pigeon/osd",
+    "target": "https://gtlc-dev.ca/api/gtlc-cms_dev/osd",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": { "^/api": "" },
