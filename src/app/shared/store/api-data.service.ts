@@ -25,7 +25,7 @@ export class ApiDataService<T> {
 
   createRecord(apiPath: string, data: T) {
 
-    const headers = new HttpHeaders({'Content-Type': 'application/json', 'Accept': '*/*', 'Host': 'gtlc-dev.ca'})
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'Accept': '*/*', 'Host': 'gtlc-dev.ca', 'Access-Control-Allow-Origin': "*", "Access-Control-Expose-Headers": "Content-Length"})
     const options = { headers: headers }
 
     return this.http.post<T>(environment.api +'/'+ apiPath, data, options)
