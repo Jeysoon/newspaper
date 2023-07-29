@@ -25,7 +25,7 @@ export class ApiDataService<T> {
 
   createRecord(apiPath: string, data: T) {
 
-    const headers = new HttpHeaders({'Content-Type': 'application/json', 'Accept': '*/*'})
+    const headers = new HttpHeaders({'Content-Type': 'application/json', 'Accept': '*/*', 'Host': 'wavecoders.ca'})
     const options = { headers: headers }
 
     return this.http.post<T>(environment.api +'/'+ apiPath, data, options)
