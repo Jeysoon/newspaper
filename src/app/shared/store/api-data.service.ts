@@ -24,11 +24,7 @@ export class ApiDataService<T> {
   }
 
   createRecord(apiPath: string, data: T) {
-
-    const headers = new HttpHeaders({'Content-Type': 'application/json'})
-    const options = { headers: headers }
-
-    return this.http.post<T>(environment.api +'/'+ apiPath, data, options)
+    return this.http.post<T>(environment.api +'/'+ apiPath, data)
   }
 
   deleteRecord(apiPath: string) {
