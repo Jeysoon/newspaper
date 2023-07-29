@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -24,7 +24,11 @@ export class ApiDataService<T> {
   }
 
   createRecord(apiPath: string, data: T) {
-    return this.http.post<T>(environment.api +'/'+ apiPath, data)
+
+    const headers = new HttpHeaders({'Content-Type': 'application/json'})
+    const options = { headers: headers }
+
+    return this.http.post<T>(environment.api +'/'+ apiPath, data, options)
   }
 
   deleteRecord(apiPath: string) {
