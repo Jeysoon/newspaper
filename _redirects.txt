@@ -1,1 +1,0 @@
-/api/* https://wavecoders.ca/rest/wc/osd/:splat 200
