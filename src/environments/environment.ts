@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   environmentName: 'PROD',
-  api: 'api'
+  api: 'https://gtlc-dev.ca/api/gtlc-cms_dev/osd'
 };
