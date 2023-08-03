@@ -58,6 +58,8 @@ export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> imp
 
   isEmpty = (obj: any) => Object.keys(obj).length === 0 && obj.constructor === Object
 
+  hide = false
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -78,11 +80,14 @@ export class RegistrationComponent extends GlobalDataStore<RegistrationInfo> imp
 
     const code = this.route.snapshot.paramMap.get('code');
     const codeClean = (code) ? code.substring(0, 8) : ''
-    if(code) this.registrationForm.patchValue({ code: codeClean })
+    if(code) {
+      this.registrationForm.patchValue({ code: codeClean, heard: 7 })
+      this.hide = true
+    }
 
     this.emailControl.valueChanges
     .subscribe(emailAddress => {
-      console.log(this.registrationForm.controls)
+
       if(this.emailControl.valid && emailAddress) {
         this.checkEmailService.params = [emailAddress]
         this.checkEmailService.fetchRecord()

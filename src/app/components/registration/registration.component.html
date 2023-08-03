@@ -3,7 +3,6 @@
     <div class="splash-container__left-image" ></div>
     <div class="splash-container__bk-image">
       <div class="splash-container__header">
-
         <h2>
           REGISTER NOW FOR VIP ACCESS TO<br>
           THE BIGGEST EVENT OF THE YEAR
@@ -122,27 +121,29 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field *ngIf="(heard$ | async) as data">
-          <mat-select
-            id="heard"
-            formControlName="heard"
-            [errorStateMatcher]="matcher"
-            placeholder="Where did you hear about us?"
-          >
-            <mat-option *ngFor="let item of data" [value]="item.id">{{ item.name }}</mat-option>
-          </mat-select>
-          <mat-error
-          *ngIf="
-            !registrationForm.get('heard')?.valid &&
-            registrationForm.get('heard')?.touched
-          "
-          class="err"
-          >
-          You have to tell us where you heard about us.
-        </mat-error>
-        </mat-form-field>
+        <div *ngIf="!hide" style="display: flex;">
+          <mat-form-field *ngIf="(heard$ | async) as data" style="flex:1">
+            <mat-select
+              id="heard"
+              formControlName="heard"
+              [errorStateMatcher]="matcher"
+              placeholder="Where did you hear about us?"
+            >
+              <mat-option *ngFor="let item of data" [value]="item.id">{{ item.name }}</mat-option>
+            </mat-select>
+            <mat-error
+            *ngIf="
+              !registrationForm.get('heard')?.valid &&
+              registrationForm.get('heard')?.touched
+            "
+            class="err"
+            >
+            You have to tell us where you heard about us.
+          </mat-error>
+          </mat-form-field>
+        </div>
 
-        <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; flex-direction: column;" *ngIf="!hide">
           <mat-form-field>
             <input
               style="font-size: 22pt; font-weight: 600; text-align: center;"
