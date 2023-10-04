@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/api/*"
-  to = "https://wavecoders.ca/rest/wavecoders/osd/:splat"
+  to = "https://wavecoders.ca/rest/wavecoders/:splat"
   status = 200
   force = true
 
