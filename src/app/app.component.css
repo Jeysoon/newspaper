@@ -24,23 +24,3 @@
   height: 5%;
   border-radius: 8px
 }
-
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  color: gray;
-  text-align: center;
-  padding: 16px;
-  text-transform: uppercase;
-}
-
-a:link {
-  color: gray;
-  text-decoration: none;
-}
-
-a:visited {
-  color: gray;
-}

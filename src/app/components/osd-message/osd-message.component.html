@@ -1,6 +1,6 @@
 <div style="flex: 1; height: 100vh; width: 80vw;" class="bk-image">
   <div style="display: flex; flex-direction: column; width: 80vw; overflow: scroll">
-    <div style="display: flex; flex-direction: column; align-items: center;">
+    <div style="display: flex; flex-direction: column; align-items: center; z-index: 100;">
       <h2 style="line-height: 120%;">
         REGISTER NOW FOR VIP ACCESS TO<br>
         THE BIGGEST EVENT OF THE YEAR
@@ -11,6 +11,9 @@
 
       <div style="margin-top: 32px;">
         <button mat-raised-button class="register-btn submit" routerLink="/register">Register Now!</button>
+      </div>
+      <div class="footer">
+        <a [routerLink]="['privacy']">Privacy Policy</a>
       </div>
     </div>
   </div>
