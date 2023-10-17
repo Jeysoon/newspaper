@@ -7,6 +7,7 @@ import { PersonalInformationComponent } from './components/personal-information/
 import { OsdSplashComponent } from './components/splash/osd-splash.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { ConfirmedThankyouComponent } from './components/confirmed-thankyou/confirmed-thankyou.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'personal-info', component: PersonalInformationComponent},
   { path: 'thankyou', component: ThankyouComponent},
+  { path: 'privacy', component: PrivacyComponent},
   { path: '**', component: OsdSplashComponent}
 ];
 

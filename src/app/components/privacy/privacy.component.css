@@ -1,0 +1,36 @@
+.centered {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 72px;
+  padding: 30px;
+  font-size: 1rem;
+  color: white;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+h2 {
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+h3 {
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+p, li {
+  color: rgb(205, 205, 205);
+}
+
+/* Responsive Margin */
+@media (max-width: 768px) {
+  .centered {
+      margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .centered {
+      margin-top: 20px;
+  }
+}

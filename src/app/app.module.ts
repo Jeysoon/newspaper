@@ -19,7 +19,7 @@ import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 
 import { SnackbarErrorModule } from './shared/snackbar-error/snackbar-error.module';
 import { ErrorType } from './shared/snackbar-error/models/error-type.enum';
-// import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { PrivacyComponent } from './components/privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +30,7 @@ import { ErrorType } from './shared/snackbar-error/models/error-type.enum';
     OsdSplashComponent,
     OsdEntryFormComponent,
     OsdMessageComponent,
+    PrivacyComponent
   ],
   imports: [
     HttpClientModule,
@@ -47,7 +48,6 @@ import { ErrorType } from './shared/snackbar-error/models/error-type.enum';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [
-    // { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
