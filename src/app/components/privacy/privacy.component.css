@@ -33,4 +33,32 @@ p, li {
   .centered {
       margin-top: 20px;
   }
+  .centered {
+    margin-top: 0;
+    width: 100%;
+    font-size: -2rem;
+    color: white;
+  }
+  h2 {
+    font-size: 12pt;
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-size: 10pt;
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+
+  p, li {
+    font-size: 8pt;
+    line-height: 12pt;
+    color: rgb(205, 205, 205);
+  }
+
+  li{
+    font-size: 8pt;
+    margin-left:-24px;
+  }
 }
