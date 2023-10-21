@@ -32,7 +32,7 @@ h2 {
 }
 
 .footer {
-  position: fixed;
+  position: inherit;
   left: -16px;
   bottom: 0;
   width: 100%;
